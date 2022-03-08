@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class SampleJFrame extends JFrame {
@@ -19,7 +20,11 @@ public class SampleJFrame extends JFrame {
 		c.setBackground(new Color(190, 227, 219));
 		
 		l = new JLabel("Hello JFrame!");
-		b = new JButton("Press me!");
+		
+		b = new JButton("Change Background Color");
+		ButtonListener bl = new ButtonListener();
+		b.addActionListener(bl);
+		
 		cb = new JCheckBox("Check me!");
 		pf = new JPasswordField("My secret password");
 		
@@ -49,6 +54,21 @@ public class SampleJFrame extends JFrame {
 		sampleJFrame.setVisible(true);
 		sampleJFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+	}
+	
+	public class ButtonListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			if(c.getBackground() == Color.white) {
+				c.setBackground(new Color(190, 227, 219));
+			} else {
+				c.setBackground(Color.white);
+			}
+			
+		}
+		
 	}
 
 }
