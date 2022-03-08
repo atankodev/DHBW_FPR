@@ -4,16 +4,40 @@ import javax.swing.*;
 public class SampleJFrame extends JFrame {
 	
 	Container c;
+	
 	JLabel l;
+	JButton b;
+	JCheckBox cb;
+	JPasswordField pf;
+	JRadioButton rb1, rb2;
+	JTextArea ta;
 	
 	public SampleJFrame() {
 		
 		c = getContentPane();
 		c.setLayout(new FlowLayout());
+		c.setBackground(new Color(190, 227, 219));
 		
 		l = new JLabel("Hello JFrame!");
+		b = new JButton("Press me!");
+		cb = new JCheckBox("Check me!");
+		pf = new JPasswordField("My secret password");
+		
+		rb1 = new JRadioButton("Radio Button 1");
+		rb2 = new JRadioButton("Radio Button 2");
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(rb1);
+		bg.add(rb2);
+		
+		ta = new JTextArea("A Text Area", 3, 10);
 		
 		c.add(l);
+		c.add(b);
+		c.add(cb);
+		c.add(pf);
+		c.add(rb1);
+		c.add(rb2);
+		c.add(ta);
 		
 	}
 
