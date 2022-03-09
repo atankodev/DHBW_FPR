@@ -9,7 +9,7 @@ public class Aufgabe2 extends JFrame {
 	Container c;
 	private JLabel beschriftung, datumsAnzeige;
 	private JComboBox<String> formatAuswahl;
-	private Date datum = new Date(System.currentTimeMillis());
+	private Date datum = new Date();
 	private JButton aktualisierung;
 	private static final SimpleDateFormat kurz = new SimpleDateFormat("E, d. MMMMM, HH:mm");
 	private static final SimpleDateFormat mittel = new SimpleDateFormat("d. MMMMM, HH:mm:ss");
@@ -58,7 +58,7 @@ public class Aufgabe2 extends JFrame {
 		public void itemStateChanged(ItemEvent e) {
 			
 			int index = formatAuswahl.getSelectedIndex();
-			datum = new Date(System.currentTimeMillis());
+			datum = new Date();
 			
 			switch(index) {
 			
@@ -94,7 +94,7 @@ public class Aufgabe2 extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			datum = new Date(System.currentTimeMillis());
+			datum = new Date();
 			anzeige.setText(gewaehlt.format(datum));
 		}
 		
