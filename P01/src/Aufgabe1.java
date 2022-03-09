@@ -1,10 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class Aufgabe1 extends JFrame {
 	
@@ -33,7 +29,7 @@ public class Aufgabe1 extends JFrame {
 		
 		Aufgabe1 a1 = new Aufgabe1();
 		a1.setTitle("Aufgabe1");
-		a1.setSize(720, 480);
+		a1.setSize(250, 150);
 		a1.setVisible(true);
 		a1.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
@@ -54,14 +50,14 @@ public class Aufgabe1 extends JFrame {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			
-			c.setBackground(Color.white);
+			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
+			
+			c.setBackground(Color.white);
 			
 		}
 
