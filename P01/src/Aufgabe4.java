@@ -10,13 +10,14 @@ public class Aufgabe4 extends JFrame {
 	JLabel operationLabel, equalsLabel, outputLabel;
 	JTextField input1, input2;
 	JButton addBtn, subBtn, mulBtn, divBtn, delBtn;
+	ButtonGroup bg;
 	
 	public Aufgabe4() {
 		
 		c = getContentPane();
 		c.setLayout(new GridLayout(2, 5));
 		
-		operationLabel = new JLabel("+");
+		operationLabel = new JLabel("");
 		operationLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		equalsLabel = new JLabel("=");
 		equalsLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -30,6 +31,18 @@ public class Aufgabe4 extends JFrame {
 		mulBtn = new JButton("Multipliziere");
 		divBtn = new JButton("Dividiere");
 		delBtn = new JButton("Loesche Alles");
+		
+		ButtonListener addListener = new ButtonListener('+');
+		ButtonListener subListener = new ButtonListener('-');
+		ButtonListener mulListener = new ButtonListener('*');
+		ButtonListener divListener = new ButtonListener('/');
+		ButtonListener delListener = new ButtonListener('1');
+		
+		addBtn.addActionListener(addListener);
+		subBtn.addActionListener(subListener);
+		mulBtn.addActionListener(mulListener);
+		divBtn.addActionListener(divListener);
+		delBtn.addActionListener(delListener);
 		
 		c.add(input1);
 		c.add(operationLabel);
@@ -52,6 +65,67 @@ public class Aufgabe4 extends JFrame {
 		a4.setVisible(true);
 		a4.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+	}
+	
+	public class ButtonListener implements ActionListener {
+		
+		char op;
+		
+		public ButtonListener(char op) {
+			this.op = op;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			double in1, in2, result;
+		
+			try {
+
+				in1 = Double.parseDouble(input1.getText());
+				in2 = Double.parseDouble(input2.getText());
+				
+				if(op == '+') {
+					result = in1 + in2;
+					outputLabel.setText(result+"");
+					operationLabel.setText("+");
+				} else if(op == '-') {
+					result = in1 - in2;
+					outputLabel.setText(result+"");
+					operationLabel.setText("-");
+				} else if(op == '*') {
+					result = in1 * in2;
+					outputLabel.setText(result+"");
+					operationLabel.setText("*");
+				} else if(op == '/') {
+					if(in2 != 0) {
+						result = in1 / in2;
+						outputLabel.setText(result+"");
+					} else {
+						outputLabel.setText("Error");
+						JOptionPane.showMessageDialog(c, "Fehler: Teilen durch Null", "Error", JOptionPane.ERROR_MESSAGE);
+					}
+					operationLabel.setText("/");
+				}
+				
+			} catch(NumberFormatException nfe) {
+				if(op != '1') {
+					JOptionPane.showMessageDialog(c, "Bitte gueltige Zahlen eingeben", "Error", JOptionPane.ERROR_MESSAGE);
+					outputLabel.setText("Error");
+				}
+			}
+			
+			if(op == '1') {
+				
+				input1.setText("");
+				input2.setText("");
+				operationLabel.setText("");
+				outputLabel.setText("");
+				
+			}
+			
+		}
+		
 	}
 
 }

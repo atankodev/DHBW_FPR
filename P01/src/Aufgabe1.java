@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.Random;
 
 public class Aufgabe1 extends JFrame {
 	
@@ -40,7 +41,15 @@ public class Aufgabe1 extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			c.setBackground(Color.black);
+			Random rand = new Random();
+			
+			float r = rand.nextFloat();
+			float g = rand.nextFloat();
+			float b = rand.nextFloat();
+			
+			Color randomColor = new Color(r, g, b);
+			
+			c.setBackground(randomColor);
 			
 		}
 		
