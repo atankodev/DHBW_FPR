@@ -110,7 +110,7 @@ public class Aufgabe4 extends JFrame {
 				
 			} catch(NumberFormatException nfe) {
 				if(op != '1') {
-					JOptionPane.showMessageDialog(c, "Fehler: Bitte gueltige Werte eingebe", "Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(c, "Fehler: Bitte gueltige Werte eingeben", "Error", JOptionPane.ERROR_MESSAGE);
 					outputLabel.setText("Error");
 				}
 			}
