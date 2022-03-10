@@ -87,20 +87,20 @@ public class Aufgabe4 extends JFrame {
 				
 				if(op == '+') {
 					result = in1 + in2;
-					outputLabel.setText(result+"");
+					outputLabel.setText(String.format("%.5f", result));
 					operationLabel.setText("+");
 				} else if(op == '-') {
 					result = in1 - in2;
-					outputLabel.setText(result+"");
+					outputLabel.setText(String.format("%.5f", result));
 					operationLabel.setText("-");
 				} else if(op == '*') {
 					result = in1 * in2;
-					outputLabel.setText(result+"");
+					outputLabel.setText(String.format("%.5f", result));
 					operationLabel.setText("*");
 				} else if(op == '/') {
 					if(in2 != 0) {
 						result = in1 / in2;
-						outputLabel.setText(result+"");
+						outputLabel.setText(String.format("%.5f", result));
 					} else {
 						outputLabel.setText("Error");
 						JOptionPane.showMessageDialog(c, "Fehler: Teilen durch Null", "Error", JOptionPane.ERROR_MESSAGE);
