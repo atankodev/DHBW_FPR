@@ -3,6 +3,7 @@ import java.awt.dnd.DropTargetContext;
 import java.awt.event.*;
 import javax.swing.*;
 
+@SuppressWarnings("serial")
 public class Aufgabe4 extends JFrame {
 	
 	Container c;
@@ -103,14 +104,14 @@ public class Aufgabe4 extends JFrame {
 						outputLabel.setText(String.format("%.5f", result));
 					} else {
 						outputLabel.setText("Error");
-						JOptionPane.showMessageDialog(c, "Fehler: Teilen durch Null", "Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(c, "Fehler: Teilen durch Null!", "Error", JOptionPane.ERROR_MESSAGE);
 					}
 					operationLabel.setText("/");
 				}
 				
 			} catch(NumberFormatException nfe) {
 				if(op != '1') {
-					JOptionPane.showMessageDialog(c, "Fehler: Bitte gueltige Werte eingeben", "Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(c, "Fehler: Bitte gueltige Werte eingeben!", "Error", JOptionPane.ERROR_MESSAGE);
 					outputLabel.setText("Error");
 				}
 			}

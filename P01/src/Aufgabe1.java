@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.Random;
 
+@SuppressWarnings("serial")
 public class Aufgabe1 extends JFrame {
 	
 	Container c;
