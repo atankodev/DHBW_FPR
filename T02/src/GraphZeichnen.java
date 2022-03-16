@@ -18,11 +18,11 @@ public class GraphZeichnen extends JFrame {
 
 		t = "Identitaet"; // fuer ’f(x) = x’
 
-		f = new Identitaet(); // fuer ’f(x) = x’
+		f = new Sqrt(); // fuer ’f(x) = x’ , Identitaet, Sqrt, Parabel
 
 		// Werte-Tabelle berechnen:
 		int anzahl = 500;
-
+		
 		// x- und y-Werte
 		double[] x = new double[anzahl];
 		double[] y = new double[anzahl];

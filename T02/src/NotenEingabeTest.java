@@ -10,6 +10,12 @@ public class NotenEingabeTest extends JFrame {
 		notenEingabe.setVisible(true);
 		notenEingabe.setTitle("Noten Eingabe");
 		notenEingabe.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		NotenEingabeNeu notenEingabeNeu = new NotenEingabeNeu();
+		notenEingabeNeu.setSize(175, 225);
+		notenEingabeNeu.setVisible(true);
+		notenEingabeNeu.setTitle("Noten Eingabe");
+		notenEingabeNeu.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}
 
