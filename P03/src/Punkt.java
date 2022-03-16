@@ -14,7 +14,7 @@ public class Punkt {
 	
 	public void drehen(double phi) {
 		x = x * Math.cos(phi) - y * Math.sin(phi);
-		y = y * Math.sin(phi) - x * Math.cos(phi);
+		y = x * Math.sin(phi) + y * Math.cos(phi);
 	}
 	
 	public double getX() {

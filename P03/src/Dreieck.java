@@ -6,6 +6,10 @@ public class Dreieck implements GeoObjekt {
 	private Strecke s1, s2, s3;
 	
 	public Dreieck(Punkt p1, Punkt p2, Punkt p3) {
+		this.p1 = p1;
+		this.p2 = p2;
+		this.p3 = p3;
+		
 		s1 = new Strecke(p1, p2);
 		s2 = new Strecke(p2, p3);
 		s3 = new Strecke(p1, p3);

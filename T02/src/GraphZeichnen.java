@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
+@SuppressWarnings("serial")
 public class GraphZeichnen extends JFrame {
 
 	public GraphZeichnen(int[] x, int[] y) {
