@@ -17,12 +17,12 @@ public class ColorButton extends JButton {
 		Color randomColor = new Color(r, g, b);
 		
 		this.setBackground(randomColor);
+		//this.setForeground(randomColor);
+		this.setBorderPainted(false);
 		this.setOpaque(true);
 		this.setToolTipText(r + " " + g + " " + b);
 		this.setText(s);
 		
 	}
-	
-	
 	
 }
