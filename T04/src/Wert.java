@@ -4,7 +4,7 @@ class Wert {
 	//public static int current
 
 	synchronized public int get(int verbraucherNr) {
-		if (!verfuegbar) {
+		while (!verfuegbar) {
 			try {
 				wait();
 			} catch (Exception e) {
@@ -14,10 +14,11 @@ class Wert {
 		verfuegbar = false;
 		notify();
 		return wert;
+		
 	}
 
 	synchronized public void put(int wert, int erzeugerNr) {
-		if (verfuegbar) {
+		while (verfuegbar) {
 			try {
 				wait();
 			} catch (Exception e) {
@@ -27,7 +28,7 @@ class Wert {
 		this.wert = wert;
 		verfuegbar = true;
 		notify();
-
+		
 	}
 
 }
