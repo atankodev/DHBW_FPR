@@ -14,7 +14,7 @@ public class Aufgabe22 {
 		
 		//Create helper File and actual File
 		File helperFile = new File("/Users/adriantanko/git/DHBW_FPR/P07/src/Blabla.txt");
-		File file = new File("/Users/adriantanko/git/DHBW_FPR/P07/src/" + filename);
+		File file = new File("/Users/adriantanko/git/DHBW_FPR/P07/src/" + filename); //Testdatei.txt
 		
 		//Get total number of lines in file
 		int numberOfLines;

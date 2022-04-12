@@ -8,22 +8,15 @@ public class Aufgabe19 {
 		File outputFile = new File("/Users/adriantanko/git/DHBW_FPR/T06/src/Ausgabe.txt");
 			
 		FileReader fileReader = new FileReader(inputFile);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		FileWriter fileWriter = new FileWriter(outputFile);
 		
-		int c;
-		
-		while((c = fileReader.read()) != (int) '\n') {
-			fileWriter.write(c);
-		}
-		
-		fileWriter.write("NEUE ZEILE");
-		fileWriter.write("\n");
-		
-		while((c = fileReader.read()) != -1) {
-			fileWriter.write(c);
-		}
+		fileWriter.write(bufferedReader.readLine() + "\n");
+		fileWriter.write("NEUE ZEILE\n");
+		fileWriter.write(bufferedReader.readLine() + "\n");
 		
 		fileReader.close();
+		bufferedReader.close();
 		fileWriter.close();
 		
 	}
